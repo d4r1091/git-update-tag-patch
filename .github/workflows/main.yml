@@ -7,6 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Echo entrypoint
+      run: echo /entrypoint.sh
     - name: Update tag after patching in release branch
       uses: d4r1091/git-update-tag-patch@master
       env:
