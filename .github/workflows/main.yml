@@ -2,12 +2,11 @@ name: Update tag
 on:
   push:
     branches:
-      - master
+      - release/**
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - name: Update tag after patching in release branch
       uses: d4r1091/git-update-tag-patch@master
       env:
