@@ -1,0 +1,13 @@
+name: 'Github Tag Bump after patching in release branch'
+description: 'A Github Action to update the tag associated to a certain release after merging a patch/[tag-name]_[patch_name] in release branch.'
+author: 'Dario Carlomagno'
+credits: 'Dario Carlomagno'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+outputs:
+  new_tag:
+    description: 'Updated tag'
+branding:
+  icon: 'git-merge'
+  color: 'purple'
