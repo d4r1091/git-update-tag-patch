@@ -1,5 +1,6 @@
-#!/bin/bash
-exec < /dev/tty
+#!/usr/bin/env bash
+
+# exec < /dev/tty
 
 # Get the current branch name
 branch_name=$(git branch | grep "*" | sed "s/\* //")
@@ -9,7 +10,7 @@ reflog_message=$(git reflog -1)
 merged_branch_name=$(echo $reflog_message | cut -d" " -f 4 | sed "s/://")
 
 # if the merged branch was master - don't do anything
-if [[ $merged_branch_name = "master" ]]; then
+if [[ $merged_branch_name == "master" ]]; then
     exit 0
 fi
 
